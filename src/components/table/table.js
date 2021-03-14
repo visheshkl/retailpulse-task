@@ -4,7 +4,15 @@ import styles from './table.module.css';
 const Table = ({cfdata,setcfdata,originalCFData,active,pageSize}) => {
     const addToFav=(i)=>{
       const newstate=[...originalCFData];
-      newstate[(active-1)*pageSize+i]?.favorite?newstate[(active-1)*pageSize+i].favorite=false:newstate[(active-1)*pageSize+i].favorite=true;
+      newstate.forEach(o=>{
+        if(o.id===i)
+        {
+          if(o.favorite)
+            o.favorite=false;
+          else
+            o.favorite=true;
+        }
+      })
       setcfdata(newstate);
     }
     return (
@@ -28,7 +36,7 @@ const Table = ({cfdata,setcfdata,originalCFData,active,pageSize}) => {
                 <td>{ cfdata.type}</td>
                 <td>{ cfdata.phase}</td>
                 <td>{ cfdata.durationSeconds}</td>
-                <td onClick={()=>addToFav(index)}><FavIcon className={cfdata?.favorite?styles.high:styles.normal}/></td>
+                <td onClick={()=>addToFav(cfdata.id)}><FavIcon className={cfdata?.favorite?styles.high:styles.normal}/></td>
               </tr>
             )
            }) : <tr><td className={styles.message}>No Data Available.....</td></tr> }

@@ -22,7 +22,7 @@ export default function Home() {
   
     if(activeFilter==="ALL" || o.type===activeFilter||(o.favorite===true&&activeFilter==="FAVORITE"))
     {
-      return o.name.toLowerCase().includes(searchFilter);
+      return o.name.toLowerCase().includes(searchFilter.toLowerCase());
     }
 
     return false;
