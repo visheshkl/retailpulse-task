@@ -1,9 +1,11 @@
 import FavIcon from '../../assets/svgs/AddToFav.svg';
 import styles from './table.module.css';
 
-const Table = ({cfdata}) => {
+const Table = ({cfdata,setcfdata}) => {
     const addToFav=(i)=>{
-      cfdata[i].favorite=true;
+      const newstate=[...cfdata];
+      newstate[i].favorite=true;
+      setcfdata(newstate);
     }
     return (
       <table className={styles.table}>

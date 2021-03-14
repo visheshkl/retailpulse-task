@@ -35,7 +35,7 @@ export default function Home() {
           <Nav/>
           <Filter setActive={setActive} searchFilter={searchFilter} changeSearchFilter={changeSearchFilter} activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>
           <div className={styles.table}>
-            {cfdata&& <Table cfdata={cfdata.filter(dataFilter).slice((active-1)*pageSize,(active)*pageSize)}/>}
+            {cfdata&& <Table setcfdata={setcfdata} cfdata={cfdata.filter(dataFilter).slice((active-1)*pageSize,(active)*pageSize)}/>}
             {cfdata&&<Pagination totalCount={cfdata.filter(dataFilter).length/pageSize} active={active} setActive={setActive} pageSize={pageSize} setPageSize={setPageSize}/>}
           </div>
         </div>

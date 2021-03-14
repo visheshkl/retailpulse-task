@@ -3,17 +3,17 @@ import React, {useState, useEffect} from 'react';
 
  const PageDirector=({number,disabled,arrow,active, setActive})=>{
     return(
-        <a className={active? styles.active:styles.inactive} onClick={()=>setActive(number)}>{arrow||number}</a>
+        disabled?null:<a className={active? styles.active:styles.inactive} onClick={()=>setActive(number)}>{arrow||number}</a>
     );
 }
 
-const Pagination = ({totalCount,active,setActive,setPageSize})=>{
+const Pagination = ({totalCount,active,setActive,pageSize,setPageSize})=>{
 
     return(
         <div className={styles.page}>
             <div className={styles.pagesize}>
                 <p>ROWS PER PAGE</p>
-                <input className={styles.input} placeholder="10" type="number" onChange={e=>{setPageSize(e.target.value);}} />
+                <input className={styles.input} value={pageSize} type="number" onChange={e=>{setPageSize(e.target.value);}} />
             </div>
             <div>
                 <PageDirector setActive={setActive} disabled={active===1} arrow="<" number={active-1}/>
