@@ -46,6 +46,21 @@
   outline: none;
 }
 
+.chart {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.butt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 800px) {
   .filter {
     flex-wrap: wrap-reverse;

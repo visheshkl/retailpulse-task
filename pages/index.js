@@ -1,10 +1,15 @@
 import styles from '../styles/Home.module.css'
 import React, {useState, useEffect} from 'react';
+import dynamic from 'next/dynamic'
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Nav from '../src/components/nav/nav';
 import Filter from '../src/components/dfilter/dfilter';
 import Table from '../src/components/table/table';
 import Pagination from '../src/components/pagination/pagination';
+
+const DynamicChart = dynamic(() => import('../src/components/chart/contestChart'), {
+  ssr: false
+})
 
 export default function Home() {
   const [cfdata,setcfdata]=useState([]);
@@ -29,7 +34,6 @@ export default function Home() {
       .then(cfdata => {setcfdata(cfdata.result)});
   }, [])
   
-  console.log(cfdata);
   const tc=cfdata.filter(dataFilter).length/pageSize;
   return (
         <div className={styles.home}>
@@ -39,6 +43,7 @@ export default function Home() {
             {cfdata&& <Table setcfdata={setcfdata} originalCFData={cfdata} active={active} pageSize={pageSize} cfdata={cfdata.filter(dataFilter).slice((active-1)*pageSize,(active)*pageSize)}/>}
             {tc?<Pagination totalCount={tc%1===0?tc:tc+1} active={active} setActive={setActive} pageSize={pageSize} setPageSize={setPageSize}/>:null}
           </div>
+          <DynamicChart cfdata={cfdata.filter(dataFilter).slice((active-1)*pageSize,(active)*pageSize)} />
         </div>
   )
 }

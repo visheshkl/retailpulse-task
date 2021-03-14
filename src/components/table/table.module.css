@@ -11,11 +11,11 @@
 }
 
 .high {
-  background-color: yellow;
+  background-color: #ffcf07;
 }
 
 .normal:hover {
-  background-color: yellow;
+  background-color: #ffcf07;
 }
 
 .message {
