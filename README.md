@@ -3,6 +3,9 @@
 
 ### Live hosted link :- [https://cflist.vercel.app/]
 
+## Problem Statement :-
+Develop a single page web app (preferably ReactJS). The app should list and search for contests that are fetched from the API (https://codeforces.com/api/contest.list). 
+
 ## List of all major libraries used :-
 1. ReactJs (Frontend framework)
 2. NextJs (Frontend framework)
@@ -16,12 +19,14 @@
 5. Make a graph of durationSeconds against the contest name. It should allow dynamic filtering on the basis of contest Phase and contest Status.
 
 
-## List of all bonus points :-
+## List of all brownie points :-
 1. - [x] Search should not trigger on every keystroke of the user (Debounce).
 2. - [x] Clicking on the contest name would redirect to a contest details page, with a route like contest/{contest_id} that displays the details of the contest. (Id, name, description, type, phase).
 3. - [x] Mark some contests as favorites. A separate filter to view contests that were marked as favorites. 
 4. - [x] Tooltips and visualizations in graphs.
 
+## Additional Features :-
+1. The complete web-app is responsive.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
