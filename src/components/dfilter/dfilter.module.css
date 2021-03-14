@@ -63,6 +63,12 @@
   align-items: center;
 }
 
+.status {
+  font-weight: bold;
+  font-size: 2rem;
+  padding-right: 1.5rem;
+}
+
 .chartcomp {
   display: flex;
   justify-content: center;
@@ -84,6 +90,10 @@
     justify-content: center;
     align-content: center;
     margin-top: 1rem;
+  }
+
+  .status {
+    padding-left: 2rem;
   }
 
   .chartcomp {
