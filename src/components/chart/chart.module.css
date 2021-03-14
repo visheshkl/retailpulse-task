@@ -1,0 +1,15 @@
+.container {
+  width: 62rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.canvas_line_chart {
+  background-color: white;
+  border-radius: 0.5rem;
+}
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+    margin-left: 0rem;
+  }
+}

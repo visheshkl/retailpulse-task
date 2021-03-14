@@ -29,14 +29,15 @@ export default function Home() {
       .then(cfdata => {setcfdata(cfdata.result)});
   }, [])
   
-
+  console.log(cfdata);
+  const tc=cfdata.filter(dataFilter).length/pageSize;
   return (
         <div className={styles.home}>
           <Nav/>
-          <Filter setActive={setActive} searchFilter={searchFilter} changeSearchFilter={changeSearchFilter} activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>
+          <Filter setActive={setActive} delayValue={1500} changeSearchFilter={changeSearchFilter} activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>
           <div className={styles.table}>
-            {cfdata&& <Table setcfdata={setcfdata} cfdata={cfdata.filter(dataFilter).slice((active-1)*pageSize,(active)*pageSize)}/>}
-            {cfdata&&<Pagination totalCount={cfdata.filter(dataFilter).length/pageSize} active={active} setActive={setActive} pageSize={pageSize} setPageSize={setPageSize}/>}
+            {cfdata&& <Table setcfdata={setcfdata} originalCFData={cfdata} active={active} pageSize={pageSize} cfdata={cfdata.filter(dataFilter).slice((active-1)*pageSize,(active)*pageSize)}/>}
+            {tc?<Pagination totalCount={tc%1===0?tc:tc+1} active={active} setActive={setActive} pageSize={pageSize} setPageSize={setPageSize}/>:null}
           </div>
         </div>
   )

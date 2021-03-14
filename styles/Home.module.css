@@ -6,3 +6,10 @@
   position: relative;
   flex-direction: column;
 }
+
+@media (max-width: 800px) {
+  .table {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

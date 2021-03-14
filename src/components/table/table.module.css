@@ -23,3 +23,9 @@
   padding-top: 2rem;
   text-align: center;
 }
+
+@media (max-width: 800px) {
+  .table {
+    margin-top: 2.5rem;
+  }
+}

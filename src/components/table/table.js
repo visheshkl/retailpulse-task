@@ -1,10 +1,10 @@
 import FavIcon from '../../assets/svgs/AddToFav.svg';
 import styles from './table.module.css';
 
-const Table = ({cfdata,setcfdata}) => {
+const Table = ({cfdata,setcfdata,originalCFData,active,pageSize}) => {
     const addToFav=(i)=>{
-      const newstate=[...cfdata];
-      newstate[i].favorite?newstate[i].favorite=false:newstate[i].favorite=true;
+      const newstate=[...originalCFData];
+      newstate[(active-1)*pageSize+i]?.favorite?newstate[(active-1)*pageSize+i].favorite=false:newstate[(active-1)*pageSize+i].favorite=true;
       setcfdata(newstate);
     }
     return (
@@ -28,10 +28,10 @@ const Table = ({cfdata,setcfdata}) => {
                 <td>{ cfdata.type}</td>
                 <td>{ cfdata.phase}</td>
                 <td>{ cfdata.durationSeconds}</td>
-                <td onClick={()=>addToFav(index)}><FavIcon className={cfdata.favorite?styles.high:styles.normal}/></td>
+                <td onClick={()=>addToFav(index)}><FavIcon className={cfdata?.favorite?styles.high:styles.normal}/></td>
               </tr>
             )
-           }) : <tr><td className={styles.message}>TRYING TO FETCH DATA IF AVAILABLE.....</td></tr> }
+           }) : <tr><td className={styles.message}>No Data Available.....</td></tr> }
         </tbody>
       </table>
     );

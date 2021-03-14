@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
+    "chart.js": "^2.9.4",
     "next": "10.0.5",
     "next-images": "^1.7.0",
     "path": "^0.12.7",
