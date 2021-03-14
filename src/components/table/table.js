@@ -4,7 +4,7 @@ import styles from './table.module.css';
 const Table = ({cfdata,setcfdata}) => {
     const addToFav=(i)=>{
       const newstate=[...cfdata];
-      newstate[i].favorite=true;
+      newstate[i].favorite?newstate[i].favorite=false:newstate[i].favorite=true;
       setcfdata(newstate);
     }
     return (
@@ -31,7 +31,7 @@ const Table = ({cfdata,setcfdata}) => {
                 <td onClick={()=>addToFav(index)}><FavIcon className={cfdata.favorite?styles.high:styles.normal}/></td>
               </tr>
             )
-           }) : <tr><td colSpan="6">Loading...</td></tr> }
+           }) : <tr><td className={styles.message}>TRYING TO FETCH DATA IF AVAILABLE.....</td></tr> }
         </tbody>
       </table>
     );

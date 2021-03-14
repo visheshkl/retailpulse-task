@@ -1,4 +1,5 @@
 .table {
+  width: 100%;
   margin-top: 5rem;
 }
 
@@ -15,4 +16,10 @@
 
 .normal:hover {
   background-color: yellow;
+}
+
+.message {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+  text-align: center;
 }
