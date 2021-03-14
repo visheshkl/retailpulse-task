@@ -9,7 +9,8 @@
 }
 
 .button,
-.button:hover {
+.button:hover,
+.buttonactive {
   width: 6rem;
   height: 2.5rem;
   border: 1px solid #1ca87d;
@@ -23,9 +24,13 @@
   background-color: #1ca87d;
 }
 
-.button:focus {
-  background-color: #1ca87d;
+.button:focus,
+.buttonactive:focus {
   outline: none;
+}
+
+.buttonactive {
+  background-color: #1ca87d;
 }
 
 .input1 {
