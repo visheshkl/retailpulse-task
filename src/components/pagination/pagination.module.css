@@ -1,4 +1,6 @@
 .page {
+  width: 100%;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,13 +30,14 @@
 .inactive:hover,
 .active,
 .active:hover {
-  padding-right: 1rem;
+  padding-right: 0.8rem;
   font-size: 1.2rem;
 }
 
 .inactive:hover,
 .active:hover {
   color: #1ca87d;
+  cursor: pointer;
 }
 
 .active {
