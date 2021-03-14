@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import Chart from "chart.js";
 import styles from "./chart.module.css";
 
-const MyChart = ({ data, options, type, width }) => {
+const MyChart = ({ data, options, type }) => {
   const canvasRef = useRef();
 
   useEffect(() => {

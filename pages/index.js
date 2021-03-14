@@ -38,6 +38,7 @@ export default function Home() {
   return (
         <div className={styles.home}>
           <Nav/>
+          <p className={styles.contest}>CONTESTS</p>
           <Filter setActive={setActive} delayValue={1500} changeSearchFilter={changeSearchFilter} activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>
           <div className={styles.table}>
             {cfdata&& <Table setcfdata={setcfdata} originalCFData={cfdata} active={active} pageSize={pageSize} cfdata={cfdata.filter(dataFilter).slice((active-1)*pageSize,(active)*pageSize)}/>}
