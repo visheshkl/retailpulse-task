@@ -1,0 +1,43 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.pagesize {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input {
+  margin-left: 1rem;
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.inactive,
+.inactive:hover,
+.active,
+.active:hover {
+  padding-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.inactive:hover,
+.active:hover {
+  color: #1ca87d;
+}
+
+.active {
+  color: #1ca87d;
+  text-decoration: underline;
+}

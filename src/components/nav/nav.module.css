@@ -1,0 +1,19 @@
+.nav {
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.logo {
+  margin-top: 1rem;
+  width: 15rem;
+  height: auto;
+}
