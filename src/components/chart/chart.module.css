@@ -1,5 +1,6 @@
 .container {
-  width: 82rem;
+  width: 80rem;
+  height: auto;
   margin-left: 1rem;
   margin-bottom: 1rem;
 }
@@ -9,7 +10,8 @@
 }
 @media (max-width: 800px) {
   .container {
-    width: 100%;
+    width: 90%;
     margin-left: 0rem;
+    font-size: 0.3rem;
   }
 }

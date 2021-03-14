@@ -47,7 +47,9 @@
 }
 
 .chart {
+  width: 100%;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,6 +59,12 @@
 .butt {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.chartcomp {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -76,5 +84,9 @@
     justify-content: center;
     align-content: center;
     margin-top: 1rem;
+  }
+
+  .chartcomp {
+    width: 100%;
   }
 }

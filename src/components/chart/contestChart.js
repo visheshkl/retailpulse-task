@@ -1,8 +1,9 @@
 import Chart from './chart';
 import styles from '../../components/dfilter/dfilter.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import useMediaQuery from '../../utils/useMediaQuery';
 
-const buildOptions = (title, scale) => {
+const buildOptions = (title, scale,display) => {
   const bodyCSS = parseFloat(
     getComputedStyle(document.querySelector("body"))["font-size"]
   );
@@ -19,6 +20,7 @@ const buildOptions = (title, scale) => {
           xAxes: [
             {
               ticks: {
+                display,
                 fontSize: bodyCSS * 0.8,
               },
             },
@@ -41,6 +43,7 @@ const buildOptions = (title, scale) => {
 
 const ContestChart=({cfdata})=>{
     const [activeFilter,setActiveFilter]=useState("ALL");
+    const isMobile=useMediaQuery("(max-width:800px)");
     const dataFilter=(o)=>{
         if(activeFilter==="ALL")
         return true;
@@ -56,7 +59,7 @@ const ContestChart=({cfdata})=>{
                 <button className={activeFilter==="BEFORE"?styles.buttonactive:styles.button} type="button" onClick={()=>{setActiveFilter("BEFORE")}}>BEFORE</button>
                 <button className={activeFilter==="FINISHED"?styles.buttonactive:styles.button} type="button" onClick={()=>{setActiveFilter("FINISHED")}}>FINISHED</button>    
             </div>
-            <div>
+            <div className={styles.chartcomp}>
                 <Chart
                 type="line"
                 data={{
@@ -72,7 +75,8 @@ const ContestChart=({cfdata})=>{
                 }}
                 options={buildOptions(
                     `Graph between contest rating and contest duration`,
-                    true
+                    true,
+                    isMobile?false:true
                 )}
                 />
             </div>

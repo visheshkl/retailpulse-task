@@ -18,10 +18,8 @@ const MyChart = ({ data, options, type, width }) => {
   }, [data, options, type]);
 
   return (
-    <div className={styles.container} style={{ width }}>
-      <canvas ref={canvasRef} className={styles.canvas_line_chart}>
-        <p className={styles.fallback_p}>Hello Fallback World</p>
-      </canvas>
+    <div className={styles.container}>
+      <canvas ref={canvasRef} className={styles.canvas_line_chart}/>
     </div>
   );
 };
