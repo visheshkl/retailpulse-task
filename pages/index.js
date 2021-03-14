@@ -1,7 +1,6 @@
 import styles from '../styles/Home.module.css'
 import React, {useState, useEffect} from 'react';
-import dynamic from 'next/dynamic'
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import dynamic from 'next/dynamic';
 import Nav from '../src/components/nav/nav';
 import Filter from '../src/components/dfilter/dfilter';
 import Table from '../src/components/table/table';

@@ -1,4 +1,5 @@
 import FavIcon from '../../assets/svgs/AddToFav.svg';
+import Link from 'next/link';
 import styles from './table.module.css';
 
 const Table = ({cfdata,setcfdata,originalCFData,active,pageSize}) => {
@@ -32,7 +33,7 @@ const Table = ({cfdata,setcfdata,originalCFData,active,pageSize}) => {
              return (
               <tr className={styles.row} key={ index }>
                 <td>{ cfdata.id }</td>
-                <td>{ cfdata.name }</td>
+                <td><Link href={`/contest/${cfdata.id}`}><a className={styles.link}>{ cfdata.name }</a></Link></td>
                 <td>{ cfdata.type}</td>
                 <td>{ cfdata.phase}</td>
                 <td>{ cfdata.durationSeconds}</td>
