@@ -1,6 +1,6 @@
 import styles from './dfilter.module.css';
 
-const Filter=({searchFilter,changeSearchFilter,activeFilter,setActiveFilter})=>{
+const Filter=({searchFilter,changeSearchFilter,activeFilter,setActiveFilter,setActive})=>{
     return(<div className={styles.filter}>
         <div className={styles.buttonwrap}>
             <button className={styles.button} type="button" onClick={()=>setActiveFilter("ALL")}>All</button>
